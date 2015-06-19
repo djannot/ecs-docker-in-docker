@@ -1,0 +1,11 @@
+{ "disks": [
+{ "uuid": "sde1", "health": "Good" }
+,
+{ "uuid": "sdc1", "health": "Good" }
+,
+{ "uuid": "sdf1", "health": "Good" }
+,
+{ "uuid": "sdb1", "health": "Good" }
+,
+{ "uuid": "sdd1", "health": "Good" }
+] }
