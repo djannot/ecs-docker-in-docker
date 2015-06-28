@@ -20,7 +20,7 @@ for i in {1..4}; do
 done
 chmod -R 777 /disks
 
-docker run -d -e SS_GENCONFIG=1 --name=ecs1 --hostname=ecs1.localdomain -p 80:80 -p 443:443 -p 8443:8443 -p 9020:9020 -p 9021:9021 -p 9022:9022 -p 9023:9023 -p 9024:9024 -p 9025:9025 -v /network.json.10.0.0.1:/host/data/network.json -v /seeds:/host/files/seeds -v /partitions.json:/data/partitions.json -v /disks/1:/disks -v /var/log/ecs/1:/opt/storageos/logs emccode/ecsobjectsw:v2.0
+docker run -d -e SS_GENCONFIG=1 --name=ecs1 --hostname=ecs1.localdomain -p 80:80 -p 443:443 -p 4443:4443 -p 8443:8443 -p 9020:9020 -p 9021:9021 -p 9022:9022 -p 9023:9023 -p 9024:9024 -p 9025:9025 -v /network.json.10.0.0.1:/host/data/network.json -v /seeds:/host/files/seeds -v /partitions.json:/data/partitions.json -v /disks/1:/disks -v /var/log/ecs/1:/opt/storageos/logs emccode/ecsobjectsw:v2.0
 sleep 5
 docker exec -i -t ecs1 chmod -R 777 /host
 docker run -d -e SS_GENCONFIG=1 --name=ecs2 --hostname=ecs2.localdomain -v /network.json.10.0.0.2:/host/data/network.json -v /seeds:/host/files/seeds -v /partitions.json:/data/partitions.json -v /disks/2:/disks -v /var/log/ecs/2:/opt/storageos/logs emccode/ecsobjectsw:v2.0
