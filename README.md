@@ -50,6 +50,12 @@ You can use the license.xml file in this repository and configure your ECS clust
 
 The Storage Pool creation can take some times.
 
+# Troubleshooting
+
+If you encounter issues during the docker pull phase, you probably have to add SSL certificates.
+
+All the .crt files included in the root directory will be added in the Docker image when you build it. If you have .pem files, modify the extension to be .crt.
+
 # Licensing
 
 Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at <http://www.apache.org/licenses/LICENSE-2.0>

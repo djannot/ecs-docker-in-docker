@@ -1,3 +1,4 @@
+update-ca-certificates
 mkdir /disks
 mkdir /files
 for i in {1..4}; do
