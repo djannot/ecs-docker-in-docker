@@ -54,6 +54,12 @@ The Storage Pool creation can take some times.
 
 If you encounter issues during the docker pull phase, you probably have to add SSL certificates.
 
+You need to add the following line in the Dockerfile just after the FROM command before building the Docker image.
+
+```
+COPY *.crt /usr/local/share/ca-certificates/
+```
+
 All the .crt files included in the root directory will be added in the Docker image when you build it. If you have .pem files, modify the extension to be .crt.
 
 # Licensing
