@@ -1,3 +1,12 @@
+pkill docker
+ip link set dev docker0 down
+brctl delbr docker0
+iptables -t nat -F POSTROUTING
+brctl addbr bridge0
+ip addr add 10.0.0.100/24 dev bridge0
+ip link set dev bridge0 up
+echo 'DOCKER_OPTS="-b=bridge0"' >> /etc/default/docker
+service docker start
 update-ca-certificates
 mkdir /disks
 mkdir /files
